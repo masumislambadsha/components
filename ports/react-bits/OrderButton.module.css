@@ -1,0 +1,221 @@
+/* Order Button — CSS Modules variant (no Tailwind required).
+   Trigger: `.animate` class while `isProcessing` is true.
+   Duration driven by --order-btn-duration (default 6000ms),
+   success delay by --order-btn-success-delay (~70%). */
+
+.btn {
+  --order-btn-duration: 6000ms;
+  --order-btn-success-delay: 4200ms;
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: inherit;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+.btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.sizeSm { height: 48px; font-size: 14px; }
+.sizeMd { height: 56px; font-size: 15px; }
+.sizeLg { height: 63px; font-size: 16px; }
+
+.variantRed { background: #ef4444; color: #fff; }
+.variantRed:hover { background: #c62828; }
+.variantAmber {
+  background: #fbbf24; color: #0f172a;
+  box-shadow: 0 10px 24px rgba(245, 158, 11, 0.35);
+}
+.variantAmber:hover { background: #f59e0b; }
+
+.isDisabled { cursor: not-allowed; }
+.variantRed.isDisabled { background: #ef4444; color: #fff; opacity: 0.7; }
+.variantAmber.isDisabled { background: #e2e8f0; color: #94a3b8; box-shadow: none; }
+
+.defaultLabel,
+.successLabel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  transition: opacity 0.3s;
+}
+.successLabel { opacity: 0; }
+.check {
+  display: inline-block;
+  width: 12px;
+  height: 10px;
+  margin-left: 4px;
+  stroke: #4ade80;
+  stroke-width: 2;
+  fill: none;
+}
+
+.box {
+  position: absolute;
+  right: 100%;
+  top: 21px;
+  width: 21px;
+  height: 21px;
+  border-radius: 2px;
+  opacity: 0;
+  background: linear-gradient(to bottom, #edd9a9, #dcb773);
+}
+
+.truck {
+  position: absolute;
+  left: 100%;
+  top: 11px;
+  width: 60px;
+  height: 41px;
+  transform: translateX(24px);
+  z-index: 1;
+}
+.truckBack {
+  position: absolute;
+  width: 60px;
+  height: 41px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, #fff, #cdd9ed);
+  z-index: 1;
+}
+.truckFront {
+  position: absolute;
+  left: 60px;
+  width: 26px;
+  height: 41px;
+  overflow: hidden;
+  border-radius: 2px 9px 9px 2px;
+  background: #275efe;
+}
+.truckWindow {
+  position: absolute;
+  left: 2px;
+  width: 22px;
+  height: 41px;
+  border-radius: 2px 8px 8px 2px;
+  background: #7699ff;
+}
+.light {
+  position: absolute;
+  left: 83px;
+  width: 3px;
+  height: 8px;
+  background: #fde047;
+  border-radius: 2px;
+  opacity: 0.35;
+}
+.lightTop { top: 4px; }
+.lightBottom { bottom: 4px; }
+.beam {
+  position: absolute;
+  left: 86px;
+  top: 5px;
+  height: 31px;
+  width: 38px;
+  opacity: 0;
+  background: linear-gradient(to right, rgba(254, 240, 138, 0.9), transparent);
+  clip-path: polygon(0 22%, 100% 0, 100% 100%, 0 78%);
+}
+
+.lines {
+  position: absolute;
+  top: 30px;
+  left: 100%;
+  width: 6px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  opacity: 0;
+}
+
+.road {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 12px;
+  background: rgba(30, 41, 59, 0.9);
+  overflow: hidden;
+  opacity: 0;
+}
+.roadDashes {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9) 0 14px,
+    transparent 14px 30px
+  );
+}
+
+@keyframes truckMove {
+  10%, 30% { transform: translateX(-260px); }
+  40% { transform: translateX(-165px); }
+  60% { transform: translateX(-355px); }
+  75%, 100% { transform: translateX(24px); }
+}
+@keyframes boxMove {
+  8%, 10% { transform: translateX(64px); opacity: 1; }
+  25% { transform: translateX(180px); opacity: 1; }
+  26% { transform: translateX(180px); opacity: 0; }
+  27%, 100% { transform: translateX(0); opacity: 0; }
+}
+@keyframes linesMove {
+  0%, 30% { opacity: 0; transform: scaleY(0.7) translateX(0); }
+  35%, 65% { opacity: 1; }
+  70% { opacity: 0; }
+  100% { transform: scaleY(0.7) translateX(-640px); }
+}
+@keyframes roadIn {
+  0%, 6% { opacity: 0; }
+  12%, 72% { opacity: 1; }
+  82%, 100% { opacity: 0; }
+}
+@keyframes dashSlide {
+  from { background-position-x: 0; }
+  to { background-position-x: -60px; }
+}
+@keyframes lightGlow {
+  0%, 8% { opacity: 0.35; box-shadow: none; }
+  12%, 70% { opacity: 1; box-shadow: 0 0 8px 3px rgba(253, 224, 71, 0.9); }
+  80%, 100% { opacity: 0.35; box-shadow: none; }
+}
+@keyframes beamOn {
+  0%, 8% { opacity: 0; }
+  12%, 70% { opacity: 1; }
+  80%, 100% { opacity: 0; }
+}
+
+.animate .defaultLabel { opacity: 0; }
+.animate .successLabel { opacity: 1; transition-delay: var(--order-btn-success-delay); }
+.animate .truck { animation: truckMove var(--order-btn-duration) ease forwards; }
+.animate .box { animation: boxMove var(--order-btn-duration) ease forwards; }
+.animate .lines { animation: linesMove var(--order-btn-duration) ease forwards; }
+.animate .light { animation: lightGlow var(--order-btn-duration) ease forwards; }
+.animate .beam { animation: beamOn var(--order-btn-duration) ease forwards; }
+.animate .road { animation: roadIn var(--order-btn-duration) ease forwards; }
+.animate .roadDashes { animation: dashSlide 0.45s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate .truck,
+  .animate .box,
+  .animate .lines,
+  .animate .road {
+    animation: none;
+    opacity: 0;
+  }
+  .animate .successLabel { transition-delay: 0s; }
+}

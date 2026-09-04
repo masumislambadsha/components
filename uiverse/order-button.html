@@ -1,0 +1,23 @@
+<!-- Uiverse submit: paste the <label> block as HTML and order-button.css as CSS.
+     Click the button to play the 6s truck delivery animation (pure CSS,
+     checkbox hack — no JavaScript). Width: 340px demo; truck distances
+     assume ~340-400px. -->
+<label class="order-btn-wrap">
+  <input type="checkbox" class="order-btn-check" aria-label="Confirm order" />
+  <span class="order-btn" role="button" tabindex="0">
+    <span class="default">Confirm Order</span>
+    <span class="success">Order Placed
+      <svg viewBox="0 0 12 10"><polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg>
+    </span>
+    <span class="box"></span>
+    <span class="truck">
+      <span class="back"></span>
+      <span class="front"><span class="window"></span></span>
+      <span class="light top"></span>
+      <span class="light bottom"></span>
+      <span class="beam"></span>
+    </span>
+    <span class="lines"></span>
+    <span class="road"><span class="road-dashes"></span></span>
+  </span>
+</label>
