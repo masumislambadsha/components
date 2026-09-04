@@ -14,7 +14,7 @@ Animated order/add-to-cart button with a truck-delivery micro-interaction. Contr
 ### Install (shadcn-compatible registry)
 
 ```bash
-npx shadcn@latest add https://cdn.jsdelivr.net/gh/masumislambadsha/components@main/registry/order-button.json
+npx shadcn@latest add https://cdn.jsdelivr.net/gh/masumislambadsha/components@main/Order%20Button/registry/order-button.json
 ```
 
 Or copy the single file [`Order Button/OrderButton.jsx`](Order%20Button/OrderButton.jsx) into your project — React + Tailwind only, no other dependencies.
@@ -46,8 +46,8 @@ Props: `onClick`, `isProcessing`, `disabled`, `defaultLabel`, `successLabel`,
 | Path | For |
 | ---- | --- |
 | `Order Button/OrderButton.jsx` | Canonical version (React + Tailwind, JS) |
-| `ports/magicui/order-button.tsx` | TypeScript port (`forwardRef`, typed props) — shadcn/MagicUI-style projects |
-| `ports/heroui/OrderButton.tsx` | HeroUI-style port (`tailwind-variants` `tv()` config) |
-| `ports/react-bits/` | CSS-Modules variant (`OrderButton.jsx` + `OrderButton.module.css`, no Tailwind needed for the animation) |
-| `uiverse/` | Pure HTML + CSS version (checkbox hack, no JS) for uiverse.io submits |
-| `registry/order-button.json` | shadcn registry definition pointing at the canonical file |
+| `Order Button/ports/magicui/order-button.tsx` | TypeScript port (`forwardRef`, typed props) — shadcn/MagicUI-style projects |
+| `Order Button/ports/heroui/OrderButton.tsx` | HeroUI-style port (`tailwind-variants` `tv()` config) |
+| `Order Button/ports/react-bits/` | CSS-Modules variant (`OrderButton.jsx` + `OrderButton.module.css`, no Tailwind needed for the animation) |
+| `Order Button/uiverse/` | Pure HTML + CSS version (checkbox hack, no JS) for uiverse.io submits |
+| `Order Button/registry/order-button.json` | shadcn registry definition pointing at the canonical file |
