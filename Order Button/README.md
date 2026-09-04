@@ -7,6 +7,8 @@ Animated order/add-to-cart button with a truck-delivery micro-interaction. Contr
 
 ![Order Button demo](demo.gif)
 
+Live on Uiverse: https://uiverse.io/masumislambadsha/light-chicken-94
+
 ## Install (shadcn-compatible registry)
 
 ```bash
