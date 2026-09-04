@@ -47,8 +47,8 @@ const orderButtonDisabledVariants = tv({
       lg: "h-[63px] text-base",
     },
     variant: {
-      primary: "bg-red-500 text-white opacity-70",
-      red: "bg-red-500 text-white opacity-70",
+      primary: "bg-slate-200 text-slate-400 shadow-none",
+      red: "bg-slate-200 text-slate-400 shadow-none",
       accent: "bg-slate-200 text-slate-400 shadow-none",
       amber: "bg-slate-200 text-slate-400 shadow-none",
     },

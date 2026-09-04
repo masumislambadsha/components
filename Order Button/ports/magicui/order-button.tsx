@@ -20,11 +20,11 @@ export interface OrderButtonProps
 const VARIANTS: Record<OrderButtonVariant, { idle: string; disabled: string }> = {
   red: {
     idle: "bg-red-500 hover:bg-[#c62828] text-white",
-    disabled: "bg-red-500 text-white opacity-70",
+    disabled: "bg-slate-200 text-slate-400 shadow-none",
   },
   primary: {
     idle: "bg-red-500 hover:bg-[#c62828] text-white",
-    disabled: "bg-red-500 text-white opacity-70",
+    disabled: "bg-slate-200 text-slate-400 shadow-none",
   },
   amber: {
     idle: "bg-amber-400 hover:bg-amber-500 text-slate-900 shadow-[0_10px_24px_rgba(245,158,11,0.35)]",
