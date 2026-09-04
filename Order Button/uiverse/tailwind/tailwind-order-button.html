@@ -1,0 +1,28 @@
+<!-- Uiverse submit (Tailwind version): paste this block as HTML and
+     tailwind-order-button.css as CSS. Tailwind utilities style everything;
+     the CSS box only holds the keyframes + click-to-play triggers.
+     Click the button to play the 6s truck delivery animation (pure CSS,
+     checkbox hack — no JavaScript). -->
+<label class="block w-[340px]">
+  <input type="checkbox" class="order-btn-check sr-only" aria-label="Confirm order" />
+  <span class="order-btn relative block h-[63px] w-full overflow-hidden rounded-xl bg-red-500 hover:bg-[#c62828] text-white font-bold text-base cursor-pointer transition-colors duration-300 select-none" role="button" tabindex="0">
+    <span class="default absolute inset-x-0 top-1/2 -translate-y-1/2 text-center transition-opacity duration-300">Confirm Order</span>
+    <span class="success absolute inset-x-0 top-1/2 -translate-y-1/2 text-center opacity-0">Order Placed
+      <svg viewBox="0 0 12 10" class="inline-block ml-1 w-3 h-2.5 stroke-[#4ade80] stroke-2 fill-none"><polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg>
+    </span>
+    <span class="box absolute w-[21px] h-[21px] bg-gradient-to-b from-[#EDD9A9] to-[#DCB773] right-full top-[21px] rounded-[2px] opacity-0"></span>
+    <span class="truck absolute left-full top-[11px] w-[60px] h-[41px] translate-x-6 z-[1]">
+      <span class="back absolute w-[60px] h-[41px] rounded-[2px] bg-gradient-to-b from-white to-[#CDD9ED] z-[1]"></span>
+      <span class="front absolute left-[60px] w-[26px] h-[41px] rounded-l-[2px] rounded-r-[9px] overflow-hidden bg-[#275EFE]">
+        <span class="window absolute left-0.5 w-[22px] h-[41px] rounded-l-[2px] rounded-r-lg bg-[#7699FF]"></span>
+      </span>
+      <span class="light absolute left-[83px] top-1 w-[3px] h-2 bg-yellow-300 rounded-[2px]"></span>
+      <span class="light absolute left-[83px] bottom-1 w-[3px] h-2 bg-yellow-300 rounded-[2px]"></span>
+      <span class="beam absolute left-[86px] top-[5px] h-[31px] w-[38px] bg-gradient-to-r from-yellow-200/90 to-transparent [clip-path:polygon(0_22%,100%_0,100%_100%,0_78%)]"></span>
+    </span>
+    <span class="lines absolute top-[30px] left-full w-1.5 h-[3px] bg-white rounded opacity-0"></span>
+    <span class="road absolute inset-x-0 bottom-0 h-[12px] bg-slate-800/90 overflow-hidden">
+      <span class="road-dashes absolute inset-x-0 top-1/2 -translate-y-1/2 h-[2px]"></span>
+    </span>
+  </span>
+</label>

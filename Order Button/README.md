@@ -48,4 +48,5 @@ While processing, the background switches to gray (like an add-to-cart confirmat
 | `ports/heroui/OrderButton.tsx` | HeroUI-style port (`tailwind-variants` `tv()` config) |
 | `ports/react-bits/` | CSS-Modules variant (`OrderButton.jsx` + `OrderButton.module.css`, no Tailwind needed for the animation) |
 | `uiverse/` | Pure HTML + CSS version (checkbox hack, no JS) for uiverse.io submits |
+| `uiverse/tailwind/` | Tailwind version for uiverse.io (utilities in HTML, keyframes + triggers in CSS) |
 | `registry/order-button.json` | shadcn registry definition pointing at the canonical file |

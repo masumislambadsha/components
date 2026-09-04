@@ -1,0 +1,72 @@
+/* Uiverse — Order Button, Tailwind version.
+   HTML carries all styling via Tailwind utilities; this file only holds
+   what utilities can't express: keyframes + the click-to-play triggers. */
+
+@keyframes truckMove {
+  10%, 30% { transform: translateX(-260px); }
+  40% { transform: translateX(-165px); }
+  60% { transform: translateX(-355px); }
+  75%, 100% { transform: translateX(24px); }
+}
+@keyframes boxMove {
+  8%, 10% { transform: translateX(64px); opacity: 1; }
+  25% { transform: translateX(180px); opacity: 1; }
+  26% { transform: translateX(180px); opacity: 0; }
+  27%, 100% { transform: translateX(0); opacity: 0; }
+}
+@keyframes linesMove {
+  0%, 30% { opacity: 0; transform: scaleY(0.7) translateX(0); }
+  35%, 65% { opacity: 1; }
+  70% { opacity: 0; }
+  100% { transform: scaleY(0.7) translateX(-640px); }
+}
+@keyframes roadIn {
+  0%, 6% { opacity: 0; }
+  12%, 72% { opacity: 1; }
+  82%, 100% { opacity: 0; }
+}
+@keyframes dashSlide {
+  from { background-position-x: 0; }
+  to { background-position-x: -60px; }
+}
+@keyframes lightGlow {
+  0%, 8% { opacity: 0.35; box-shadow: none; }
+  12%, 70% { opacity: 1; box-shadow: 0 0 8px 3px rgba(253, 224, 71, 0.9); }
+  80%, 100% { opacity: 0.35; box-shadow: none; }
+}
+@keyframes beamOn {
+  0%, 8% { opacity: 0; }
+  12%, 70% { opacity: 1; }
+  80%, 100% { opacity: 0; }
+}
+
+.order-btn .road { opacity: 0; }
+.order-btn .road-dashes {
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9) 0 14px,
+    transparent 14px 30px
+  );
+}
+.order-btn .light { opacity: 0.35; }
+.order-btn .beam { opacity: 0; }
+
+/* Play on check (click). Uncheck resets. */
+.order-btn-check:checked + .order-btn { pointer-events: none; }
+.order-btn-check:checked + .order-btn .default { opacity: 0; }
+.order-btn-check:checked + .order-btn .success { opacity: 1; transition-delay: 4.2s; }
+.order-btn-check:checked + .order-btn .truck { animation: truckMove 6s ease forwards; }
+.order-btn-check:checked + .order-btn .box { animation: boxMove 6s ease forwards; }
+.order-btn-check:checked + .order-btn .lines { animation: linesMove 6s ease forwards; }
+.order-btn-check:checked + .order-btn .light { animation: lightGlow 6s ease forwards; }
+.order-btn-check:checked + .order-btn .beam { animation: beamOn 6s ease forwards; }
+.order-btn-check:checked + .order-btn .road { animation: roadIn 6s ease forwards; }
+.order-btn-check:checked + .order-btn .road-dashes { animation: dashSlide 0.45s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .order-btn-check:checked + .order-btn .truck,
+  .order-btn-check:checked + .order-btn .box,
+  .order-btn-check:checked + .order-btn .lines,
+  .order-btn-check:checked + .order-btn .road { animation: none; opacity: 0; }
+  .order-btn-check:checked + .order-btn .success { transition-delay: 0s; }
+}
