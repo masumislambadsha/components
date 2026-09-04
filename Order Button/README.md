@@ -17,6 +17,11 @@ npx shadcn@latest add https://cdn.jsdelivr.net/gh/masumislambadsha/components@ma
 
 Or copy the single file [`OrderButton.jsx`](OrderButton.jsx) into your project — React + Tailwind only, no other dependencies.
 
+> Maintenance: the shadcn CLI does not fetch remote file URLs, so the
+> component source is inlined in `registry/order-button.json`. After **every**
+> edit to `OrderButton.jsx`, re-run `node registry/sync.mjs` (from this
+> folder) and commit the regenerated JSON — otherwise installs ship stale code.
+
 ## Usage
 
 ```jsx
