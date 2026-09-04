@@ -34,7 +34,7 @@ const [busy, setBusy] = useState(false);
 ```
 
 Props: `onClick`, `isProcessing`, `disabled`, `defaultLabel`, `successLabel`,
-`variant` (`red`/`primary`/`amber`/`accent`), `size` (`sm`/`md`/`lg`),
+`variant` (`dark`/`primary`/`red`/`amber`/`accent`), `size` (`sm`/`md`/`lg`),
 `durationMs` (default `6000`), `type`, `className`, `style`, `ariaLabel`.
 
 While processing, the background switches to gray (like an add-to-cart confirmation) and the button is disabled to prevent double submits.

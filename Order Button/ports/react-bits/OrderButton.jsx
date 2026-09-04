@@ -25,8 +25,9 @@ const SIZES = {
 };
 
 const VARIANTS = {
-  red: styles.variantRed,
-  primary: styles.variantRed,
+  dark: styles.variantDark,
+  primary: styles.variantDark,
+  red: styles.variantDark,
   amber: styles.variantAmber,
   accent: styles.variantAmber,
 };
@@ -37,7 +38,7 @@ export default function OrderButton({
   disabled = false,
   defaultLabel = "Confirm Order",
   successLabel = "Order Placed",
-  variant = "red",
+  variant = "dark",
   size = "lg",
   durationMs = 6000,
   type = "button",
@@ -70,7 +71,7 @@ export default function OrderButton({
       className={[
         styles.btn,
         SIZES[size] || SIZES.lg,
-        VARIANTS[variant] || VARIANTS.red,
+        VARIANTS[variant] || VARIANTS.dark,
         isDisabled ? styles.isDisabled : "",
         isProcessing ? styles.animate : "",
         className,

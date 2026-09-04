@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-export type OrderButtonVariant = "primary" | "red" | "accent" | "amber";
+export type OrderButtonVariant = "primary" | "dark" | "red" | "accent" | "amber";
 export type OrderButtonSize = "sm" | "md" | "lg";
 
 export interface OrderButtonProps
@@ -18,12 +18,16 @@ export interface OrderButtonProps
 }
 
 const VARIANTS: Record<OrderButtonVariant, { idle: string; disabled: string }> = {
+  dark: {
+    idle: "bg-zinc-900 hover:bg-zinc-700 text-white",
+    disabled: "bg-slate-200 text-slate-400 shadow-none",
+  },
   red: {
-    idle: "bg-red-500 hover:bg-[#c62828] text-white",
+    idle: "bg-zinc-900 hover:bg-zinc-700 text-white",
     disabled: "bg-slate-200 text-slate-400 shadow-none",
   },
   primary: {
-    idle: "bg-red-500 hover:bg-[#c62828] text-white",
+    idle: "bg-zinc-900 hover:bg-zinc-700 text-white",
     disabled: "bg-slate-200 text-slate-400 shadow-none",
   },
   amber: {

@@ -24,8 +24,8 @@
  */
 
 const VARIANTS = {
-  red: {
-    idle: "bg-red-500 hover:bg-[#c62828] text-white",
+  dark: {
+    idle: "bg-zinc-900 hover:bg-zinc-700 text-white",
     disabled: "bg-slate-200 text-slate-400 shadow-none",
   },
   amber: {
@@ -34,9 +34,10 @@ const VARIANTS = {
   },
 };
 
-// `primary`/`accent` are generic aliases. `red`/`amber` stay for
-// backwards compatibility.
-VARIANTS.primary = VARIANTS.red;
+// `primary` is the generic alias for the dark theme; `red` stays as a
+// backwards-compatible alias. `accent` aliases `amber`.
+VARIANTS.primary = VARIANTS.dark;
+VARIANTS.red = VARIANTS.dark;
 VARIANTS.accent = VARIANTS.amber;
 
 const SIZES = {
@@ -51,7 +52,7 @@ export default function OrderButton({
   disabled = false,
   defaultLabel = "Confirm Order",
   successLabel = "Order Placed",
-  variant = "red",
+  variant = "dark",
   size = "lg",
   durationMs = 6000,
   type = "button",
@@ -62,7 +63,7 @@ export default function OrderButton({
   ref,
 } = {}) {
   const isDisabled = disabled || isProcessing;
-  const styles = VARIANTS[variant] || VARIANTS.red;
+  const styles = VARIANTS[variant] || VARIANTS.dark;
   const sizeStyles = SIZES[size] || SIZES.lg;
   const duration = `${durationMs}ms`;
   // Success label appears ~70% through the drive-in -> load -> drive-off story.

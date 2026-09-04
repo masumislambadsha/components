@@ -5,11 +5,11 @@
 .order-btn {
   position: relative; display: block; height: 63px; width: 100%;
   overflow: hidden; border-radius: 12px; cursor: pointer;
-  background: #ef4444; color: #fff; font-weight: 700; font-size: 16px;
+  background: #18181b; color: #fff; font-weight: 700; font-size: 16px;
   transition: background .3s;
   user-select: none;
 }
-.order-btn:hover { background: #c62828; }
+.order-btn:hover { background: #3f3f46; }
 
 .order-btn .default, .order-btn .success {
   position: absolute; left: 0; right: 0; top: 50%;

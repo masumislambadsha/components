@@ -27,8 +27,9 @@ const orderButtonVariants = tv({
       lg: "h-[63px] text-base",
     },
     variant: {
-      primary: "bg-red-500 hover:bg-[#c62828] text-white",
-      red: "bg-red-500 hover:bg-[#c62828] text-white",
+      dark: "bg-zinc-900 hover:bg-zinc-700 text-white",
+      primary: "bg-zinc-900 hover:bg-zinc-700 text-white",
+      red: "bg-zinc-900 hover:bg-zinc-700 text-white",
       accent:
         "bg-amber-400 hover:bg-amber-500 text-slate-900 shadow-[0_10px_24px_rgba(245,158,11,0.35)]",
       amber:
